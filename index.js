@@ -62,7 +62,7 @@ function createFontCanvas(fontname) {
   ctx._setFont(Weight, Style, FontSize, 'px', FontFamily)
   ctx.fillText("Hello, World!", 50, 50)
 
-  require('fs').writeFileSync('hello-world.png', canvas.toDataURL().split(",")[1], 'base64');
+  require('fs').writeFileSync('output_images/hello-world.png', canvas.toDataURL().split(",")[1], 'base64');
 }
 
 // FONT TEST FROM TUTORIAL (creates a hello-world.png, should use the correct font)
@@ -125,7 +125,7 @@ createPixiApp = () => {
 
           let data = "data:" + res.headers["content-type"] + ";base64," + new Buffer(body).toString('base64');
 
-          fs.writeFile('./requestoutput.png', data.split(',')[1], 'base64', (err) => {if (err) console.log(err)});
+          fs.writeFile('./output_images/requestoutput.png', data.split(',')[1], 'base64', (err) => {if (err) console.log(err)});
 
           if (child.pluginName == 'sprite') {
             sprite = PIXI.Sprite.fromImage(data);
@@ -214,7 +214,7 @@ finishRendering = () => {
 
   setTimeout(() => {
     var canvasdata = app.view.toDataURL().split(",")[1];
-    fs.writeFile('./my' + newSize.toString() + '.png', canvasdata, 'base64', (err) => {
+    fs.writeFile('./output_images/my' + newSize.toString() + '.png', canvasdata, 'base64', (err) => {
         if (err) console.log(err);
 
         console.log('data saved!');
