@@ -1,0 +1,28 @@
+{
+  "name": "canvas-backend-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "pixi": "index.js"
+  },
+  "dependencies": {
+    "canvas": "^1.6.6",
+    "clone": "^2.1.1",
+    "jsdom": "^11.1.0",
+    "lodash.reduce": "^4.6.0",
+    "node-gyp": "^3.6.2",
+    "querystring": "^0.2.0",
+    "sync-request": "^4.1.0",
+    "xmldom": "^0.1.27"
+  },
+  "devDependencies": {
+    "pixi": "^0.3.1",
+    "pixi.js": "^4.5.4"
+  }
+}
