@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 process.env.FC_DEBUG = 8191;
-// process.env.FONTCONFIG_PATH = require('path').resolve(__dirname, './assets/fonts');
-process.env.FONTCONFIG_PATH = './assets/fonts';
-process.env.PANGOCAIRO_BACKEND = 'fontconfig';
+process.env.PANGOCAIRO_BACKEND = 'fontconfig'
+process.env.FONTCONFIG_PATH = require('path').resolve(__dirname, './assets/fonts')
 
 const fs = require('fs');
 const queryString = require('querystring');
