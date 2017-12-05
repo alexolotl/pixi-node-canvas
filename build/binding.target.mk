@@ -46,10 +46,10 @@ CFLAGS_OBJC_Debug :=
 CFLAGS_OBJCC_Debug :=
 
 INCS_Debug := \
-	-I/Users/alexzisis/.node-gyp/8.2.1/include/node \
-	-I/Users/alexzisis/.node-gyp/8.2.1/src \
-	-I/Users/alexzisis/.node-gyp/8.2.1/deps/uv/include \
-	-I/Users/alexzisis/.node-gyp/8.2.1/deps/v8/include
+	-I/Users/alex/.node-gyp/9.2.0/include/node \
+	-I/Users/alex/.node-gyp/9.2.0/src \
+	-I/Users/alex/.node-gyp/9.2.0/deps/uv/include \
+	-I/Users/alex/.node-gyp/9.2.0/deps/v8/include
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=binding' \
@@ -92,10 +92,10 @@ CFLAGS_OBJC_Release :=
 CFLAGS_OBJCC_Release :=
 
 INCS_Release := \
-	-I/Users/alexzisis/.node-gyp/8.2.1/include/node \
-	-I/Users/alexzisis/.node-gyp/8.2.1/src \
-	-I/Users/alexzisis/.node-gyp/8.2.1/deps/uv/include \
-	-I/Users/alexzisis/.node-gyp/8.2.1/deps/v8/include
+	-I/Users/alex/.node-gyp/9.2.0/include/node \
+	-I/Users/alex/.node-gyp/9.2.0/src \
+	-I/Users/alex/.node-gyp/9.2.0/deps/uv/include \
+	-I/Users/alex/.node-gyp/9.2.0/deps/v8/include
 
 OBJS := \
 	$(obj).target/$(TARGET)/src/binding.o

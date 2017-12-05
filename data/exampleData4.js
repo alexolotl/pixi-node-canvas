@@ -33,7 +33,7 @@ module.exports = {
         },
         "style": {
           "fill": "#ffffff",
-          "fontFamily": "PAOM_Regular",
+          "fontFamily": "CormorantGaramond-Medium",
           "fontSize": 48,
           "fontStyle": "normal",
           "fontWeight": "normal"
