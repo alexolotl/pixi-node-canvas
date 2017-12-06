@@ -28,6 +28,8 @@ global.navigator = global.window.navigator = { userAgent: 'node.js' };
 global.window.DOMParser = require('xmldom').DOMParser;
 global.PIXI = require('pixi.js');
 
+global.PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
+
 const newSize = process.argv[2];
 const jsonFile = process.argv[3] || 'exampleData9';
 const exampleData = require('./data/' + jsonFile );
