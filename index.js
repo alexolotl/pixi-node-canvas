@@ -30,6 +30,8 @@ global.PIXI = require('pixi.js');
 
 global.PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
 
+const _overlay = false;
+
 const newSize = process.argv[2];
 const jsonFile = process.argv[3] || 'exampleData9';
 const exampleData = require('./data/' + jsonFile );
@@ -101,7 +103,30 @@ scaleAndAddChildren = (sprite, child, newScale) => {
     for (let i = 0; i < data.children.length; i++) {
       container.addChild(data.children[i].newSprite);
     }
-    finishRendering();
+
+    if (_overlay) {
+      // add in overlay
+      request({url: data.overlay.texture.slice(0, data.overlay.texture.lastIndexOf('?')), qs: {}, encoding: null}, (err, res, body) => { // important: must have encoding null
+        if (err) console.log(err);
+
+        let imgdata = "data:" + res.headers["content-type"] + ";base64," + new Buffer(body).toString('base64');
+        sprite = PIXI.Sprite.fromImage(imgdata); // overlay
+        sprite.scale.x = data.overlay.size.width / 600 * newScale;
+        sprite.scale.y = data.overlay.size.height / 600 * newScale;
+        sprite.opacity = .5;
+        sprite.anchor.set(.5);
+        sprite.position.x = data.width * newScale / 2
+        sprite.position.y = data.height * newScale / 2
+        container.addChild(sprite)
+
+        finishRendering();
+      });
+    }
+    else {
+      finishRendering();
+    }
+
+
   };
 }
 
@@ -109,7 +134,7 @@ scaleAndAddChildren = (sprite, child, newScale) => {
 
 makeTilingSprite = (child, imagedata) => {
 
-  let newScale = app.renderer.height / data.height;
+  let newScale = newSize / data.height;
 
   const texture = PIXI.Texture.fromImage(imagedata);
 
@@ -183,7 +208,7 @@ finishRendering = () => {
 }
 
 createPixiApp = () => {
-  let newScale = app.renderer.height / data.height;
+  let newScale = newSize / data.height;
 
   data.background && addBackground();
 
@@ -206,14 +231,13 @@ createPixiApp = () => {
           if (err) console.log(err);
 
           let data = "data:" + res.headers["content-type"] + ";base64," + new Buffer(body).toString('base64');
-          fs.writeFile('./output_images/requestoutput.png', data.split(',')[1], 'base64', (err) => {if (err) console.log(err)});
+          // fs.writeFile('./output_images/requestoutput.png', data.split(',')[1], 'base64', (err) => {if (err) console.log(err)});
 
           if (child.pluginName == 'sprite') {
             sprite = PIXI.Sprite.fromImage(data);
             if (base_url.indexOf('height=600') && sprite.height > 600) { // this init resizing only needed for sprite not tilingSprite
-              let aspect = child.scale.x / child.scale.y
-              child.scale.y = 600 / sprite.height // scale the child's height by what is necessary to make it 600 as a starting point
-              child.scale.x = 600 / sprite.width * aspect
+              child.scale.y *= 600 / sprite.height // scale the child's height by what is necessary to make it 600 as a starting point
+              child.scale.x *= 600 / sprite.height
             }
           }
           else if (child.pluginName == 'tilingSprite') {
