@@ -1,34 +1,28 @@
 module.exports = {
 	"pixi": {
 		"background": {
-			"value1": "#ffdcdc",
-			"value2": "#0e27c3",
-			"gradient": true,
-			"scale_gradient": "0.46",
-			"rotate_gradient": "83",
-			"translate_gradient": "0.47"
+			"value1": "#ffffff",
+			"value2": "#000000"
 		},
 		"children": [{
 			"pluginName": "sprite",
 			"position": {
-				"x": 286.5,
-				"y": 240.5
+				"x": 262.5,
+				"y": 227.5
 			},
-			"rotation": 0.3665191429188092,
+			"rotation": 0,
 			"scale": {
 				"x": 1,
 				"y": 1
 			},
 			"style": {
-				"fill": "transparent",
-        // "stroke": "black",
-        // "strokeThickness": 1,
+				"fill": "#ff2c2c",
 				"fontFamily": "Roboto",
-				"fontSize": 59,
-				"fontStyle": "italic",
+				"fontSize": 75,
+				"fontStyle": "normal",
 				"fontWeight": "normal"
 			},
-			"text": "testing",
+			"text": "font",
 			"texture": null
 		}],
 		"overlay": {
