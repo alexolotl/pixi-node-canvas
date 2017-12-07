@@ -28,15 +28,33 @@ global.navigator = global.window.navigator = { userAgent: 'node.js' };
 global.window.DOMParser = require('xmldom').DOMParser;
 global.PIXI = require('pixi.js');
 
-global.PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.NEAREST;
+global.PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 
 const _overlay = false;
 
 const newSize = process.argv[2];
-const jsonFile = process.argv[3] || 'exampleData9';
-const exampleData = require('./data/' + jsonFile );
+
+const jsonFile = process.argv[3] || '33357_1.json';
+// const exampleData = require('./data/' + jsonFile );
+
+const jsonFiles = [
+  "33357_1.json",
+  "33413_1.json",
+  "33415_1.json",
+  "33425_1.json",
+  "33515_1.json",
+  "33711_1.json",
+  "33735_4.json",
+  "33830_1.json"
+]
+
+// const exampleDataJson = fs.readFileSync("./data/json/" + jsonFile);
+// const exampleData = JSON.parse(exampleDataJson);
+const exampleData = require('./data/json/' + jsonFile)
+
+
 const data = exampleData.pixi;
-const outputFileName = process.argv[4] || 'outputHeight-' + newSize.toString() + 'px.png';
+const outputFileName = process.argv[4] || jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px_height.png';
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
     backgroundColor: 0xffffff
 });
@@ -106,7 +124,8 @@ scaleAndAddChildren = (sprite, child, newScale) => {
 
     if (_overlay) {
       // add in overlay
-      request({url: data.overlay.texture.slice(0, data.overlay.texture.lastIndexOf('?')), qs: {}, encoding: null}, (err, res, body) => { // important: must have encoding null
+      const editedURL = data.overlay.texture.indexOf('filepicker') ? data.overlay.texture : data.overlay.texture.slice(0, data.overlay.texture.lastIndexOf('?'))
+      request({url: editedURL, qs: {}, encoding: null}, (err, res, body) => { // important: must have encoding null
         if (err) console.log(err);
 
         let imgdata = "data:" + res.headers["content-type"] + ";base64," + new Buffer(body).toString('base64');
@@ -223,7 +242,9 @@ createPixiApp = () => {
 
         const base_url = child.texture;
         const last_index = base_url.lastIndexOf('?')
-        const cleaned_url = base_url.slice(0,last_index)
+        // const cleaned_url = base_url.slice(0,last_index)
+        let cleaned_url = data.overlay.texture.indexOf('filepicker') ? base_url : base_url.slice(0,last_index)
+        // TODO remove webp, if we accept the filepicker urls like this
 
         // queryParams = queryString.parse(new_url.replace(/^.*\?/, ''));
 
