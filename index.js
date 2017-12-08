@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
-// arg 1: desired output pixel outputHeight
-// arg 2: name of file with json data exported (no '.js' needed)
-// arg 3: output file name
+// arg 1: desired output height (in pixels), OR PRODUCT TYPE (options: shirt, sweatshirt)
+// arg 2: NAME OF JSON FILE INCLUDED IN THE data/json/ directory. example: 33357_1.json
+// arg 3: output file name (optional)
+
+// sweatshirt height starting point = 2460 px
+// t shirt height starting point = 2255 px
 
 process.env.FC_DEBUG = 8191;
 process.env.PANGOCAIRO_BACKEND = 'fontconfig'
@@ -32,7 +35,9 @@ global.PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 
 const _overlay = false;
 
-const newSize = process.argv[2];
+let newSize = process.argv[2] || 2255;
+if (newSize == 'shirt') {newSize = 2255}
+if (newSize == 'sweatshirt') {newSize = 2460}
 
 const jsonFile = process.argv[3] || '33357_1.json';
 // const exampleData = require('./data/' + jsonFile );
@@ -54,7 +59,7 @@ const exampleData = require('./data/json/' + jsonFile)
 
 
 const data = exampleData.pixi;
-const outputFileName = process.argv[4] || jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px_height.png';
+const outputFileName = process.argv[4] || jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png';
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
     backgroundColor: 0xffffff
 });
