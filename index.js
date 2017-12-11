@@ -60,12 +60,12 @@ const exampleData = require('./data/json/' + jsonFile)
 
 const data = exampleData.pixi;
 const outputFileName = process.argv[4] || jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png';
-// const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
-//     backgroundColor: 0xffffff
-// });
-const app = new PIXI.Application(newSize, newSize, {
+const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
     backgroundColor: 0xffffff
 });
+// const app = new PIXI.Application(newSize, newSize, {
+//     backgroundColor: 0xffffff
+// });
 const bkg = new PIXI.Container();
 app.stage.addChild(bkg);
 const container = new PIXI.Container();
@@ -108,7 +108,7 @@ scaleAndAddChildren = (sprite, child, newScale) => {
 
   // Set the sprite position to the center of container
   sprite.anchor.set(0.5);
-  sprite.x = child.position.x * newScale - data.width/data.height*600 / 4;
+  sprite.x = child.position.x * newScale;
   sprite.y = child.position.y * newScale;
 
   // Set scale and rotation of the sprite
@@ -142,7 +142,7 @@ scaleAndAddChildren = (sprite, child, newScale) => {
         sprite.scale.y = data.overlay.size.height / 600 * newScale;
         sprite.opacity = .5;
         sprite.anchor.set(.5);
-        sprite.position.x = data.width * newScale / 2 - data.width/data.height*600 / 4;
+        sprite.position.x = data.width * newScale / 2
         sprite.position.y = data.height * newScale / 2
         container.addChild(sprite)
 
