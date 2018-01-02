@@ -238,8 +238,8 @@ finishRendering = () => {
 
 createPixiApp = () => {
 
-  console.log(Object.keys(exampleData))
-  console.log(Object.keys(data))
+  console.log(exampleData)
+  console.log(data)
 
   let newScale = newSize / data.height;
 
