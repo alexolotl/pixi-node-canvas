@@ -62,7 +62,13 @@ const jsonFiles = [
 const exampleData = require(jsonFile)
 
 const data = exampleData.pixi;
+console.log('full json:')
+console.log(exampleData)
+console.log('full json keys:')
 console.log(Object.keys(exampleData))
+console.log('json.pixi:')
+console.log(exampleData)
+console.log('json.pixi keys:')
 console.log(Object.keys(data))
 const outputFileName = jsonFile.slice(jsonFile.lastIndexOf('/') + 1, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
 const outputFilePath = process.argv[4] || './output_images/prints/sweatshirt_sized/' + outputFileName
