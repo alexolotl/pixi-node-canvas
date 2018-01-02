@@ -62,7 +62,7 @@ const jsonFiles = [
 const exampleData = require(jsonFile)
 
 const data = exampleData.pixi;
-const outputFileName = jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
+const outputFileName = jsonFile.slice(jsonFile.lastIndexOf('/'), jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
 const outputFilePath = process.argv[4] || './output_images/prints/sweatshirt_sized/' + outputFileName
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
     backgroundColor: 0xffffff
