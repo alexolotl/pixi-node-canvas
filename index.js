@@ -55,7 +55,11 @@ const jsonFiles = [
 
 // const exampleDataJson = fs.readFileSync("./data/json/" + jsonFile);
 // const exampleData = JSON.parse(exampleDataJson);
-const exampleData = require('./data/json/' + jsonFile)
+
+// commented out to work on server
+// const exampleData = require('./data/json/' + jsonFile)
+
+const exampleData = require(jsonFile)
 
 
 const data = exampleData.pixi;
@@ -225,7 +229,6 @@ finishRendering = () => {
     var canvasdata = app.view.toDataURL().split(",")[1];
     fs.writeFile('./output_images/prints/sweatshirt_sized/' + outputFileName, canvasdata, 'base64', (err) => {
         if (err) console.log(err);
-
         console.log('data saved!');
         console.log('admin.paom.com/pixitest/' + outputFileName)
         process.exit();
