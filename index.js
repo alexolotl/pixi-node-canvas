@@ -62,7 +62,8 @@ const jsonFiles = [
 const exampleData = require(jsonFile)
 
 const data = exampleData.pixi;
-const outputFileName = process.argv[4] || jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png';
+const outputFileName = jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
+const outputFilePath = process.argv[4] || './output_images/prints/sweatshirt_sized/' + outputFileName
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
     backgroundColor: 0xffffff
 });
@@ -226,7 +227,7 @@ addBackground = () => {
 finishRendering = () => {
   setTimeout(() => {
     var canvasdata = app.view.toDataURL().split(",")[1];
-    fs.writeFile('./output_images/prints/sweatshirt_sized/' + outputFileName, canvasdata, 'base64', (err) => {
+    fs.writeFile(outputFilePath, canvasdata, 'base64', (err) => {
         if (err) console.log(err);
         console.log('data saved!');
         console.log('admin.paom.com/pixitest/' + outputFileName)
