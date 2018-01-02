@@ -237,9 +237,7 @@ finishRendering = () => {
 }
 
 createPixiApp = () => {
-  console.log(data)
-  console.log(data.children)
-  console.log(data.width)
+
   let newScale = newSize / data.height;
 
   data.background && addBackground();
@@ -292,4 +290,4 @@ createPixiApp = () => {
   }
 }
 
-setTimeout(() => createPixiApp(), 3000)
+createPixiApp()
