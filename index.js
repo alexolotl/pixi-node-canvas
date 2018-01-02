@@ -238,6 +238,8 @@ finishRendering = () => {
 
 createPixiApp = () => {
 
+  Object.keys(data).forEach((key) => console.log(key))
+
   let newScale = newSize / data.height;
 
   data.background && addBackground();
