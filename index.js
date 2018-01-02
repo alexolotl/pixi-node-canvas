@@ -61,6 +61,7 @@ const jsonFiles = [
 
 const exampleData = require(jsonFile)
 
+console.log(jsonFile)
 console.log(exampleData)
 
 const data = exampleData.pixi;
