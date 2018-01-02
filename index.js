@@ -61,7 +61,6 @@ const jsonFiles = [
 
 const exampleData = require(jsonFile)
 
-
 const data = exampleData.pixi;
 const outputFileName = process.argv[4] || jsonFile.slice(0, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png';
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
