@@ -62,7 +62,7 @@ const jsonFiles = [
 const exampleData = require(jsonFile)
 
 const data = exampleData.pixi;
-const outputFileName = jsonFile.slice(jsonFile.lastIndexOf('/'), jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
+const outputFileName = jsonFile.slice(jsonFile.lastIndexOf('/') + 1, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
 const outputFilePath = process.argv[4] || './output_images/prints/sweatshirt_sized/' + outputFileName
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
     backgroundColor: 0xffffff
@@ -230,7 +230,7 @@ finishRendering = () => {
     fs.writeFile(outputFilePath, canvasdata, 'base64', (err) => {
         if (err) console.log(err);
         console.log('data saved!');
-        console.log('admin.paom.com/pixitest/' + outputFileName)
+        console.log(outputFilePath)
         process.exit();
     });
   }, 200); // TODO remove sync. not sure why this only works with a timeout, maybe something in pixi code?
