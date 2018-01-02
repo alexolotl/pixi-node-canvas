@@ -223,10 +223,11 @@ addBackground = () => {
 finishRendering = () => {
   setTimeout(() => {
     var canvasdata = app.view.toDataURL().split(",")[1];
-    fs.writeFile('./output_images/' + outputFileName, canvasdata, 'base64', (err) => {
+    fs.writeFile('./output_images/prints/sweatshirt_sized/' + outputFileName, canvasdata, 'base64', (err) => {
         if (err) console.log(err);
 
         console.log('data saved!');
+        console.log('admin.paom.com/pixitest/' + outputFileName)
         process.exit();
     });
   }, 200); // TODO remove sync. not sure why this only works with a timeout, maybe something in pixi code?
