@@ -115,7 +115,7 @@ scaleAndAddChildren = (sprite, child, newScale) => {
   sprite.y = child.position.y * newScale;
 
   // Set scale and rotation of the sprite
-  if (child.texture) { // if it's an image (fontSize handled separately)
+  if (child.texture && child.pluginName != 'tilingSprite') { // if it's a non-tiled image (fontSize handled separately)
     sprite.scale.x = child.scale.x * newScale;
     sprite.scale.y = child.scale.y * newScale;
   }
@@ -161,15 +161,25 @@ scaleAndAddChildren = (sprite, child, newScale) => {
 
 
 makeTilingSprite = (child, imagedata) => {
-
   let newScale = newSize / data.height;
 
-  const texture = PIXI.Texture.fromImage(imagedata);
+  // create new canvas with imagedata and resize it to smaller scale before applying tilingsprite
+  const canvas = document.createElement('canvas')
+  const img = new Image()
+  const ctx = canvas.getContext('2d')
+  img.src = imagedata
+  const newWidth = 600*newScale*child.scale.x
+  const newHeight = 600*newScale*child.scale.y
+  canvas.width = newWidth
+  canvas.height = newHeight
+  ctx.drawImage(img, 0, 0, newWidth, newHeight)
+
+  const texture = PIXI.Texture.fromCanvas(canvas);
 
   const sprite = new PIXI.extras.TilingSprite(
     texture,
-    app.renderer.width * 4 / (child.scale.x*newScale),
-    app.renderer.height * 4 / (child.scale.y*newScale),
+    app.renderer.width * 4,
+    app.renderer.height * 4,
   );
 
   return sprite;
