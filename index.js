@@ -60,16 +60,7 @@ const jsonFiles = [
 // const exampleData = require('./data/json/' + jsonFile)
 
 const exampleData = require(jsonFile)
-
 const data = exampleData.pixi;
-console.log('full json:')
-console.log(exampleData)
-console.log('full json keys:')
-console.log(Object.keys(exampleData))
-console.log('json.pixi:')
-console.log(exampleData)
-console.log('json.pixi keys:')
-console.log(Object.keys(data))
 const outputFileName = jsonFile.slice(jsonFile.lastIndexOf('/') + 1, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
 const outputFilePath = process.argv[4] || './output_images/prints/sweatshirt_sized/' + outputFileName
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
@@ -246,6 +237,8 @@ finishRendering = () => {
 
 createPixiApp = () => {
 
+  console.log(data)
+
   let newScale = newSize / data.height;
 
   data.background && addBackground();
@@ -266,6 +259,7 @@ createPixiApp = () => {
         // TODO remove webp, if we accept the filepicker urls like this
 
         // queryParams = queryString.parse(new_url.replace(/^.*\?/, ''));
+        console.log('cleaned url: ' + cleaned_url)
 
         request({url: cleaned_url, qs: {}, encoding: null}, (err, res, body) => { // important: must have encoding null
           if (err) console.log(err);
