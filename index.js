@@ -60,8 +60,7 @@ const jsonFiles = [
 // const exampleData = require('./data/json/' + jsonFile)
 
 const exampleData = require(jsonFile)
-let data = exampleData.pixi;
-data = JSON.stringify(data)
+const data = exampleData.pixi;
 const outputFileName = jsonFile.slice(jsonFile.lastIndexOf('/') + 1, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
 const outputFilePath = process.argv[4] || './output_images/prints/sweatshirt_sized/' + outputFileName
 const app = new PIXI.Application(newSize * data.width/data.height, newSize, {
@@ -238,9 +237,6 @@ finishRendering = () => {
 
 createPixiApp = () => {
 
-  console.log('node script data:')
-  console.log(data)
-
   let newScale = newSize / data.height;
 
   data.background && addBackground();
@@ -259,6 +255,7 @@ createPixiApp = () => {
         // const cleaned_url = base_url.slice(0,last_index)
         let cleaned_url = data.overlay.texture.indexOf('filepicker') ? base_url : base_url.slice(0,last_index)
         // TODO remove webp, if we accept the filepicker urls like this
+        cleaned_url = cleaned_url.replace(/outputFormat=webp/g, '')
 
         // queryParams = queryString.parse(new_url.replace(/^.*\?/, ''));
         console.log('cleaned url: ' + cleaned_url)
@@ -288,6 +285,7 @@ createPixiApp = () => {
         const style = child.style;
         style.fontSize *= newScale;
         sprite = new PIXI.Text(child.text, style);
+        console.log(child.text)
         scaleAndAddChildren(sprite, child, newScale, i);
       }
     }
