@@ -168,8 +168,8 @@ makeTilingSprite = (child, imagedata) => {
 
   const sprite = new PIXI.extras.TilingSprite(
     texture,
-    app.renderer.width * 4 / (newScale*child.scale.x),
-    app.renderer.height * 4 / (newScale*child.scale.y),
+    app.renderer.width * 4 / (child.scale.x*newScale),
+    app.renderer.height * 4 / (child.scale.y*newScale),
   );
 
   return sprite;

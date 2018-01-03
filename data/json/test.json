@@ -1,1 +1,35 @@
-{"pixi": {"width": 524, "overlay": {"pluginName": "sprite", "texture": "https://images.paom.com/epaombody/ghost_edits_600x600/weekendbag_600x600.png?height=600", "size": {"width": 455, "height": 455}}, "children": [{"style": null, "scale": {"y": 0.43, "x": 0.43}, "text": "", "texture": "https://images.paom.com/arbitrary?url=https%3A%2F%2Fcdn.filepicker.io%2Fapi%2Ffile%2FQPnWmI35TQaGuozQWmGJ&height=600", "pluginName": "sprite", "position": {"y": 311.49999436598597, "x": 208.9993023962555}, "rotation": 0}, {"style": {"fill": "#000000", "fontFamily": "Roboto", "fontStyle": "normal", "fontSize": 26, "fontWeight": "normal"}, "scale": {"y": 1, "x": 1}, "text": "\"el.skel\"", "texture": null, "pluginName": "sprite", "position": {"y": 225.50000013414322, "x": 401.00182956453756}, "rotation": 0}], "background": {"scale_gradient": "0.26", "gradient": true, "value2": "#1b6a84", "value1": "#35eeee", "rotate_gradient": "113", "translate_gradient": "0.7"}, "height": 455}}
+{
+    "pixi": {
+        "width": 524,
+        "overlay": {
+            "pluginName": "sprite",
+            "texture": "https://images.paom.com/epaombody/ghost_edits_600x600/raincoat_600x600.png?outputFormat=webp&height=600",
+            "size": {
+                "width": 455,
+                "height": 455
+            }
+        },
+        "children": [
+            {
+                "style": null,
+                "scale": {
+                    "y": 0.01,
+                    "x": 0.01
+                },
+                "text": "",
+                "texture": "https://images.paom.com/epaomfp/gtRToXTITKxAHR1lAKSz_IMG_9494.jpg?outputFormat=webp&height=600",
+                "pluginName": "tilingSprite",
+                "position": {
+                    "y": 227.5,
+                    "x": 262
+                },
+                "rotation": 0.6457718232379019
+            }
+        ],
+        "background": {
+            "value2": "#000000",
+            "value1": "#ffffff"
+        },
+        "height": 455
+    }
+}
