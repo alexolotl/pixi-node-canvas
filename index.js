@@ -59,7 +59,8 @@ const jsonFiles = [
 // commented out to work on server
 // const exampleData = require('./data/json/' + jsonFile)
 
-const exampleData = require(jsonFile)
+let exampleData = require(jsonFile)
+exampleData = JSON.stringify(exampleData)
 const data = exampleData.pixi;
 const outputFileName = jsonFile.slice(jsonFile.lastIndexOf('/') + 1, jsonFile.lastIndexOf('.')) + '-' + newSize.toString() + 'px.png'
 const outputFilePath = process.argv[4] || './output_images/prints/sweatshirt_sized/' + outputFileName
@@ -238,7 +239,7 @@ finishRendering = () => {
 createPixiApp = () => {
 
   console.log('node script data:')
-  console.dir(JSON.stringify(data))
+  console.log(data)
 
   let newScale = newSize / data.height;
 
