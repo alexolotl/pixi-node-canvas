@@ -237,6 +237,7 @@ finishRendering = () => {
 
 createPixiApp = () => {
 
+  console.log('node script data:')
   console.log(data)
 
   let newScale = newSize / data.height;
