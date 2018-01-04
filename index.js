@@ -298,7 +298,12 @@ createPixiApp = () => {
         //   style.fontFamily = 'Roboto-Italic' // TODO this may not always work ! ! !
         //   console.warn('WARNING: contains italic font, check if it works')
         // }
-        console.log(style.fontStyle)
+        if (style.fontStyle == 'italic') {
+          style.fontWeight = '';
+        }
+        else if (style.fontWeight == 'bold') {
+          style.fontStyle = '';
+        }
 
         sprite = new PIXI.Text(child.text, style);
         scaleAndAddChildren(sprite, child, newScale, i);
