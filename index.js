@@ -299,6 +299,7 @@ createPixiApp = () => {
         //   console.warn('WARNING: contains italic font, check if it works')
         // }
         console.log(style.fontStyle)
+        
         sprite = new PIXI.Text(child.text, style);
         scaleAndAddChildren(sprite, child, newScale, i);
       }
