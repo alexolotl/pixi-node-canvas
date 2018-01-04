@@ -168,8 +168,8 @@ makeTilingSprite = (child, imagedata) => {
   const img = new Image()
   const ctx = canvas.getContext('2d')
   img.src = imagedata
-  const newWidth = (img.width/img.height)*600*newScale*child.scale.x
-  const newHeight =(img.height/img.width)*600*newScale*child.scale.y
+  const newWidth = img.width*newScale*child.scale.x
+  const newHeight = img.height*newScale*child.scale.y
   canvas.width = newWidth
   canvas.height = newHeight
   ctx.drawImage(img, 0, 0, newWidth, newHeight)
@@ -299,7 +299,7 @@ createPixiApp = () => {
         //   console.warn('WARNING: contains italic font, check if it works')
         // }
         console.log(style.fontStyle)
-        
+
         sprite = new PIXI.Text(child.text, style);
         scaleAndAddChildren(sprite, child, newScale, i);
       }
