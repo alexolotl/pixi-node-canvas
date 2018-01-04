@@ -278,10 +278,11 @@ createPixiApp = () => {
 
           if (child.pluginName == 'sprite') {
             sprite = PIXI.Sprite.fromImage(data);
-            if (base_url.indexOf('height=600') && sprite.height > 600) { // this init resizing only needed for sprite not tilingSprite
-              child.scale.y *= 600 / sprite.height // scale the child's height by what is necessary to make it 600 as a starting point
-              child.scale.x *= 600 / sprite.height
-            }
+            // faulty - not all height=600 actually are true
+            // if (base_url.indexOf('height=600') && sprite.height > 600) { // this init resizing only needed for sprite not tilingSprite
+            //   child.scale.y *= 600 / sprite.height // scale the child's height by what is necessary to make it 600 as a starting point
+            //   child.scale.x *= 600 / sprite.height
+            // }
           }
           else if (child.pluginName == 'tilingSprite') {
             sprite = makeTilingSprite(child, data);

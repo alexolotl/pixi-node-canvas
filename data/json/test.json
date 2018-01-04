@@ -13,22 +13,43 @@
             {
                 "style": null,
                 "scale": {
-                    "y": 0.12,
-                    "x": 0.12
+                    "y": 0.27,
+                    "x": 0.27
                 },
                 "text": "",
-                "texture": "https://images.paom.com/arbitrary?outputFormat=webp&url=https%3A%2F%2Fcdn.filepicker.io%2Fapi%2Ffile%2FRvDURHzWSgG3IHbT9oIV&height=600",
-                "pluginName": "tilingSprite",
+                "texture": "https://images.paom.com/epaomdev-h800/PrintAllOverMe_PAOM_c6968a20-f60e-454a-b352-f5ec48fb17f9.jpe?outputFormat=webp&upscale=1&height=600",
+                "pluginName": "sprite",
                 "position": {
-                    "y": 227.5,
-                    "x": 241.5
+                    "y": 224.0150146484375,
+                    "x": 268.40997314453125
                 },
-                "rotation": 0
+                "rotation": 1.5533430342749532
+            },
+            {
+                "style": {
+                    "fill": "#000000",
+                    "fontFamily": "Roboto",
+                    "fontStyle": "italic",
+                    "fontSize": 37,
+                    "fontWeight": "normal"
+                },
+                "scale": {
+                    "y": 1,
+                    "x": 1
+                },
+                "text": "First....Coffee",
+                "texture": null,
+                "pluginName": "sprite",
+                "position": {
+                    "y": 247.52496337890625,
+                    "x": 239.176025390625
+                },
+                "rotation": 1.5707963267948966
             }
         ],
         "background": {
             "value2": "#000000",
-            "value1": "#e8dc95"
+            "value1": "#230303"
         },
         "height": 455
     }
