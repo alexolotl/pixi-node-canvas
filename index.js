@@ -7,7 +7,7 @@
 // sweatshirt height starting point = 2460 px
 // t shirt height starting point = 2255 px
 
-process.env.FC_DEBUG = 8191;
+//process.env.FC_DEBUG = 8191;
 process.env.PANGOCAIRO_BACKEND = 'fontconfig'
 process.env.FONTCONFIG_PATH = require('path').resolve(__dirname, './assets/fonts')
 
@@ -168,8 +168,8 @@ makeTilingSprite = (child, imagedata) => {
   const img = new Image()
   const ctx = canvas.getContext('2d')
   img.src = imagedata
-  const newWidth = 600*newScale*child.scale.x
-  const newHeight = 600*newScale*child.scale.y
+  const newWidth = (img.width/img.height)*600*newScale*child.scale.x
+  const newHeight =(img.height/img.width)*600*newScale*child.scale.y
   canvas.width = newWidth
   canvas.height = newHeight
   ctx.drawImage(img, 0, 0, newWidth, newHeight)
@@ -268,7 +268,7 @@ createPixiApp = () => {
         cleaned_url = cleaned_url.replace(/outputFormat=webp/g, '')
 
         // queryParams = queryString.parse(new_url.replace(/^.*\?/, ''));
-        console.log('cleaned url: ' + cleaned_url)
+        // console.log('cleaned url: ' + cleaned_url)
 
         request({url: cleaned_url, qs: {}, encoding: null}, (err, res, body) => { // important: must have encoding null
           if (err) console.log(err);
@@ -294,8 +294,12 @@ createPixiApp = () => {
       else {
         const style = child.style;
         style.fontSize *= newScale;
+        // if (style.fontStyle == 'italic') {
+        //   style.fontFamily = 'Roboto-Italic' // TODO this may not always work ! ! !
+        //   console.warn('WARNING: contains italic font, check if it works')
+        // }
+        console.log(style.fontStyle)
         sprite = new PIXI.Text(child.text, style);
-        console.log(child.text)
         scaleAndAddChildren(sprite, child, newScale, i);
       }
     }
