@@ -1,0 +1,35 @@
+{
+    "pixi": {
+        "width": 525, 
+        "overlay": {
+            "pluginName": "sprite", 
+            "texture": "https://images.paom.com/epaombody/editions/e1_tote_600x600.png?outputFormat=webp&height=600", 
+            "size": {
+                "width": 455, 
+                "height": 455
+            }
+        }, 
+        "children": [
+            {
+                "style": null, 
+                "scale": {
+                    "y": 0.85, 
+                    "x": 0.85
+                }, 
+                "text": "", 
+                "texture": "https://images.paom.com/arbitrary?outputFormat=webp&url=https%3A%2F%2Fcdn.filepicker.io%2Fapi%2Ffile%2FUZWEYueUTxClKGMuNWb5&height=600", 
+                "pluginName": "sprite", 
+                "position": {
+                    "y": 258.5, 
+                    "x": 208.5
+                }, 
+                "rotation": 0
+            }
+        ], 
+        "background": {
+            "value2": "#000000", 
+            "value1": "#ffffff"
+        }, 
+        "height": 455
+    }
+}
