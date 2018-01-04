@@ -1,3 +1,5 @@
 node_modules/
-output_images/
+output_images/prints/sweatshirt_sized/*.jpg
+output_images/prints/sweatshirt_sized/*.jpeg
+output_images/prints/sweatshirt_sized/*.png
 node_modules/
