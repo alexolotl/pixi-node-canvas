@@ -25,12 +25,12 @@ global.window = global.dom.window;
 global.document = global.window.document;
 global.Canvas = require('canvas');
 global.Image = require('canvas').Image;
-window.CanvasRenderingContext2D = 'foo'; // needed ?
+global.window.CanvasRenderingContext2D = 'foo'; // needed ?
 global.window.Element = undefined; // needed ?
 global.navigator = global.window.navigator = { userAgent: 'node.js' };
 global.window.DOMParser = require('xmldom').DOMParser;
-global.PIXI = require('pixi.js');
 
+global.PIXI = require('pixi.js');
 global.PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 
 const _overlay = false;
@@ -313,4 +313,5 @@ createPixiApp = () => {
   }
 }
 
+// global.window.onload = createPixiApp
 createPixiApp()

@@ -27,7 +27,7 @@
             },
             {
                 "style": {
-                    "fill": "white",
+                    "fill": "#ffffff",
                     "fontFamily": "Roboto",
                     "fontStyle": "normal",
                     "fontSize": 15,
@@ -48,11 +48,11 @@
             },
             {
                 "style": {
-                    "fill": "white",
+                    "fill": "#ffffff",
                     "fontFamily": "Roboto",
-                    "fontStyle": "normal",
+                    "fontStyle": "italic",
                     "fontSize": 14,
-                    "fontWeight": "bold"
+                    "fontWeight": "normal"
                 },
                 "scale": {
                     "y": 1,

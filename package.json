@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "pixi": "^0.3.1",
-    "pixi.js": "^4.5.4"
+    "pixi.js": "^4.6.2"
   }
 }
