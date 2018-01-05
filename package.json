@@ -17,12 +17,9 @@
     "jsdom": "^11.1.0",
     "lodash.reduce": "^4.6.0",
     "node-gyp": "^3.6.2",
+    "pixi.js": "^4.6.2",
     "querystring": "^0.2.0",
     "sync-request": "^4.1.0",
     "xmldom": "^0.1.27"
-  },
-  "devDependencies": {
-    "pixi": "^0.3.1",
-    "pixi.js": "^4.6.2"
   }
 }
