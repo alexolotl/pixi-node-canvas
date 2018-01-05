@@ -10,6 +10,7 @@
 //process.env.FC_DEBUG = 8191;
 process.env.PANGOCAIRO_BACKEND = 'fontconfig'
 process.env.FONTCONFIG_PATH = require('path').resolve(__dirname, './assets/fonts')
+console.log(process.env.FONTCONFIG_PATH)
 
 const fs = require('fs');
 const queryString = require('querystring');
@@ -40,6 +41,7 @@ if (newSize == 'shirt') {newSize = 2255}
 if (newSize == 'sweatshirt') {newSize = 2460}
 
 const jsonFile = process.argv[3] || '33357_1.json';
+
 // const exampleData = require('./data/' + jsonFile );
 
 const jsonFiles = [
