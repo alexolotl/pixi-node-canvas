@@ -8,6 +8,8 @@
 // t shirt height starting point = 2255 px
 
 //process.env.FC_DEBUG = 8191;
+
+console.log(process.argv[2])
 process.env.PANGOCAIRO_BACKEND = 'fontconfig'
 process.env.FONTCONFIG_PATH = require('path').resolve(__dirname, './assets/fonts')
 console.log(process.env.FONTCONFIG_PATH)
