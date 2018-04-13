@@ -1,0 +1,53 @@
+{
+	"pixi": {
+		"background": {
+			"value1": "#fdafaf",
+			"value2": "#000000"
+		},
+		"children": [{
+			"pluginName": "sprite",
+			"position": {
+				"x": 255.5,
+				"y": 282.5
+			},
+			"rotation": 5.899212871740834,
+			"scale": {
+				"x": 0.39,
+				"y": 0.39
+			},
+			"style": null,
+			"text": "",
+			"texture": "https://images.paom.com/arbitrary?outputFormat=webp&url=https%3A%2F%2Fcdn.filepicker.io%2Fapi%2Ffile%2FxpJI29uSb6CUUIjK6d1L&height=600"
+		}, {
+			"pluginName": "sprite",
+			"position": {
+				"x": 306.5,
+				"y": 412.5
+			},
+			"rotation": 0,
+			"scale": {
+				"x": 1,
+				"y": 1
+			},
+			"style": {
+				"fill": "#f9f3f3",
+				"fontFamily": "Roboto",
+				"fontSize": 18,
+				"fontStyle": "normal",
+				"fontWeight": "normal"
+			},
+			"text": "בבא קמא – ג:ה",
+			"texture": null
+		}],
+		"overlay": {
+			"pluginName": "sprite",
+			"size": {
+				"width": 455,
+				"height": 455
+			},
+			"texture": "https://images.paom.com/epaomassets/poly_tshirt_png.png?outputFormat=webp&height=600"
+		},
+		"height": 455,
+		"width": 525
+	}
+}

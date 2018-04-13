@@ -1,0 +1,33 @@
+{
+	"pixi": {
+		"background": {
+			"value1": "#7198b7",
+			"value2": "#000000"
+		},
+		"children": [{
+			"pluginName": "sprite",
+			"position": {
+				"x": 262.5,
+				"y": 227.5
+			},
+			"rotation": 0,
+			"scale": {
+				"x": 0.44,
+				"y": 0.44
+			},
+			"style": null,
+			"text": "",
+			"texture": "https://images.paom.com/arbitrary?outputFormat=webp&url=https%3A%2F%2Fcdn.filepicker.io%2Fapi%2Ffile%2FRdCgKL7eQei0FMZSyBuN&height=600"
+		}],
+		"overlay": {
+			"pluginName": "sprite",
+			"size": {
+				"width": 455,
+				"height": 455
+			},
+			"texture": "https://images.paom.com/epaomassets/poly_tshirt_png.png?outputFormat=webp&height=600"
+		},
+		"height": 455,
+		"width": 525
+	}
+}

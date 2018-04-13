@@ -1,0 +1,3 @@
+{
+    "pixi": {"background":{"value1":"#ffffff","value2":"#000000"},"children":[{"pluginName":"sprite","position":{"x":136.5,"y":230.5},"rotation":0,"scale":{"x":1.04,"y":-1.04},"style":null,"text":"","texture":"https://images.paom.com/arbitrary?url=https%3A%2F%2Fcdn.filepicker.io%2Fapi%2Ffile%2FNJJMDkCcRQdNbrBLZK7o&height=600"},{"pluginName":"sprite","position":{"x":155.5,"y":130.5},"rotation":0,"scale":{"x":1,"y":1},"style":{"fill":"#000000","fontFamily":"Roboto","fontSize":26,"fontStyle":"italic","fontWeight":"bold"},"text":"PAWV\u00c9Y ","texture":null}],"overlay":{"pluginName":"sprite","size":{"width":455,"height":455},"texture":"https://images.paom.com/epaombody/editions/e1_tshirt_600x600.png?height=600"},"height":455,"width":315}
+}

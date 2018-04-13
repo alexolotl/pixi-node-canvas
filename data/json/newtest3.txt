@@ -1,0 +1,7 @@
+display:inline;
+max-width:600px;
+background-image:url(http://i.embed.ly/1/display/resize?key=86a4d292f3c146cfa4d85b8ac626d1d7&url=https%3A%2F%2Fpaomdev.s3.amazonaws.com%2Fac3e2700-5723-4332-8e37-2153e7c669e9..jpe&grow=true&height=2000);
+background-position-x:0;
+background-position-y:0;
+background-repeat:repeat;
+background-size:101%;

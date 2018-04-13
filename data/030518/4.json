@@ -1,0 +1,33 @@
+{
+	"pixi": {
+		"background": {
+			"value1": "#920000",
+			"value2": "#000000"
+		},
+		"children": [{
+			"pluginName": "sprite",
+			"position": {
+				"x": 269.5,
+				"y": 381.5
+			},
+			"rotation": 0,
+			"scale": {
+				"x": 1,
+				"y": 1
+			},
+			"style": null,
+			"text": "",
+			"texture": "https://images.paom.com/arbitrary?url=https%3A%2F%2Fcdn.filepicker.io%2Fapi%2Ffile%2FMEj4EgVjR5WDgtMr5ki1&height=600"
+		}],
+		"overlay": {
+			"pluginName": "sprite",
+			"size": {
+				"width": 455,
+				"height": 455
+			},
+			"texture": "https://images.paom.com/epaombody/ghost_edits_600x600/minitubeskirt_600x600.png?height=600"
+		},
+		"height": 455,
+		"width": 525
+	}
+}

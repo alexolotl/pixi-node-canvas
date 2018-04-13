@@ -9,6 +9,8 @@
 
 //process.env.FC_DEBUG = 8191;
 
+console.log('starting pixi node script')
+
 console.log(process.argv[2])
 process.env.PANGOCAIRO_BACKEND = 'fontconfig'
 process.env.FONTCONFIG_PATH = require('path').resolve(__dirname, './assets/fonts')
@@ -35,6 +37,7 @@ global.window.DOMParser = require('xmldom').DOMParser;
 
 global.PIXI = require('pixi.js');
 global.PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
+global.PIXI.scaleModes.DEFAULT = PIXI.scaleModes.NEAREST;
 
 const _overlay = false;
 
@@ -308,6 +311,12 @@ createPixiApp = () => {
         }
         else if (style.fontWeight == 'bold') {
           style.fontStyle = '';
+        }
+
+        // BAD ! we need stroke and strokethickness to be serialized!
+        if (style.fill == 'transparent') {
+          style.stroke = 0xab0000
+          style.strokeThickness = 3
         }
 
         sprite = new PIXI.Text(child.text, style);
